@@ -1,42 +1,26 @@
 package com.redbee.academy.challenge;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+class Main {
+	public static void main(String[] args) {
+		int numero1 = 50, numero2 = 100;
+		System.out.printf("Número 1: %d. Número 2: %d\n", numero1, numero2);
+		int minimo = minimo(numero1, numero2);
+		System.out.printf("Minimo: %d\n", minimo);
+		int maximo = maximo(numero1, numero2);
+		System.out.printf("Máximo: %d\n", maximo);
+	}
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+	public static int minimo(int numero1, int numero2) {
+		if (numero1 < numero2)
+			return numero1;
+		// Si no, el mínimo es el número 2
+		return numero2;
+	}
 
-public class CompareNumbersTests {
-
-  @Test
-  @DisplayName("Tests happy path")
-  public void testHappyPath() {
-    Integer result = CompareNumbers.max(1, 3, 2);
-    assertNotNull(result, "The result cannot be null");
-    assertEquals(3, result);
-
-    Integer anotherResult = CompareNumbers.max(3, 1, 2);
-    assertNotNull(anotherResult, "The result cannot be null");
-    assertEquals(3, anotherResult);
-
-    Integer finalResult = CompareNumbers.max(1, 2, 3);
-    assertNotNull(finalResult, "The result cannot be null");
-    assertEquals(3, finalResult);
-  }
-
-  @Test
-  @DisplayName("Tests happy path")
-  public void testEquals() {
-    Integer result = CompareNumbers.max(1, 1, 1);
-    assertNotNull(result, "The result cannot be null");
-    assertEquals(1, result);
-  }
-
-  @Test
-  @DisplayName("Test when null values are sent")
-  public void testNullValues() {
-    Integer result = CompareNumbers.max(null, 2, null);
-    assertNotNull(result, "The result cannot be null");
-    assertEquals(2, result);
-  }
+	public static int maximo(int numero1, int numero2) {
+		if (numero1 > numero2)
+			return numero1;
+		// Si no, el máximo es el número 2
+		return numero2;
+	}
 }
